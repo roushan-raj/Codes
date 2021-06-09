@@ -1,0 +1,24 @@
+
+public class Q13_No_of_Selective_Arrangements {
+	
+	public static int dearrangements(int n) {
+		if(n == 1 || n == 2) {
+			return n-1;
+		}
+		
+		int first = 0;
+		int second = 1;
+		
+		for(int i=3; i<=n; i++) {
+			int temp = (i-1) * (first+second);
+			first = second;
+			second = temp;
+		}
+		return second;
+	}
+
+	public static void main(String[] args) {
+		
+		System.out.println(dearrangements(2));
+	}
+}

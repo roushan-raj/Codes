@@ -1,0 +1,49 @@
+
+public class Q5_LinkedList_Slot_2_22Dec2020 {
+	
+	private Node head = null;
+	
+	private class Node{
+		private int data;
+		private Node next;
+		
+		public Node(int data) {
+			this.data = data;
+			this.next = null;
+		}
+	}
+	
+	public void insertNode(int val) {
+		Node temp = head;
+		Node newNode = new Node(val);
+		
+		if(temp==null) {
+			temp = newNode;
+		}
+		while(temp.next != null) {
+			temp.next = newNode;
+		}
+		temp = temp.next;
+	}
+	
+	public void display() {
+		Node curr = head;
+		while(curr != null) {
+			System.out.print(curr.data+" ");
+			curr = curr.next;
+		}
+	}
+	
+
+	public static void main(String[] args) {
+		Q5_LinkedList_Slot_2_22Dec2020 ob = new Q5_LinkedList_Slot_2_22Dec2020();
+		ob.insertNode(1);
+		ob.insertNode(2);
+		ob.insertNode(3);
+		ob.insertNode(4);
+		ob.insertNode(5);
+		ob.insertNode(6);
+		
+		ob.display();
+	}
+}

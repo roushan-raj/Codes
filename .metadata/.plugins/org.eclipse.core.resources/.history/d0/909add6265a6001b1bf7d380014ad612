@@ -1,0 +1,23 @@
+
+public class Example {
+	
+	public static void checkString(String str) {
+		String ans = "";
+		
+		for(int i=0; i<str.length(); i++) {
+			if(str.charAt(i) == str.charAt(i)) {
+				continue;
+			}
+			else {
+				ans = ans + str.charAt(i);
+			}
+		}
+		checkString(str);
+		System.out.println(ans);
+	}
+
+	public static void main(String[] args) {
+		String str = "dassam";
+		checkString(str);
+	}
+}

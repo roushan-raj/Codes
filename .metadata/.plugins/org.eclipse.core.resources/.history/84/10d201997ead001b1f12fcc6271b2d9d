@@ -1,0 +1,36 @@
+import java.util.Arrays;
+
+public class Q14_Max_Freq_Character_in_String {
+	
+	public static char freq(String str) {
+		
+		int [] freq = new int [256];
+		Arrays.fill(freq, 0);
+		
+		for(int i=0; i<str.length(); i++) {
+			freq[str.charAt(i)]++;
+		}
+		
+		int max = Integer.MIN_VALUE;
+		int index = 0;
+		
+		for(int i=0; i<freq.length; i++) {
+			if(freq[i] > max) {
+				max = freq[i];
+				index = i;
+			}
+		}
+
+		if(freq[index] == 1) {
+			return (char)48;
+		}
+		else { 
+		    return (char)(index);
+		}
+	}
+
+	public static void main(String[] args) {
+		
+		System.out.println(freq("abcdefghijkl"));
+	}
+}

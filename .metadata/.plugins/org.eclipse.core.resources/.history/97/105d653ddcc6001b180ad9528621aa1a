@@ -1,0 +1,27 @@
+
+public class Q45_Frequency_Count_And_Print {
+	
+	static int MAX = 26; 
+    
+    static void findfreq(String s, int n) { 
+       
+        int freq[] = new int[MAX] ; 
+      
+        for (int i = 0; i < n; i++) { 
+            freq[s.charAt(i) - 'a']++; 
+        } 
+      
+        for (int i = 0; i < MAX; i++) { 
+      
+            if (freq[i] == 0) 
+                continue; 
+      
+            System.out.print((char)(i + 'a') +""+ freq[i]); 
+        } 
+    } 
+
+	public static void main(String[] args) {
+		String str = "babdc";
+		findfreq(str, str.length());
+	}
+}

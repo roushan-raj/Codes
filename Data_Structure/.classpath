@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="LinkedList"/>
+	<classpathentry kind="src" path="Stack"/>
+	<classpathentry kind="src" path="Array"/>
+	<classpathentry kind="src" path="GFG_PrevCompanyQuestions"/>
+	<classpathentry kind="src" path="Queue"/>
+	<classpathentry kind="src" path="BinaryTree"/>
+	<classpathentry kind="src" path="Matrix"/>
+	<classpathentry kind="src" path="Heap"/>
+	<classpathentry kind="src" path="Undirected_Graph"/>
+	<classpathentry kind="src" path="Searching_Sorting"/>
+	<classpathentry kind="src" path="Trie"/>
+	<classpathentry kind="src" path="Backtracking_Unacademy"/>
+	<classpathentry kind="src" path="String_Recursion_Unacademy"/>
+	<classpathentry kind="src" path="Recursion_Unacademy"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

@@ -1,0 +1,25 @@
+
+public class Q14_Last_Digit_After_Power {
+	
+	public static int findLastDigit(int input1, int input2) {
+		int val = (int)Math.pow(input2, input1);
+		System.out.println(val);
+		
+		int temp = 0;
+		while(val > 0) {
+			temp = val % 10;
+			val = val / 10;
+		}
+		
+		return temp;
+		
+	}
+
+	public static void main(String[] args) {
+		int n = 3;
+		int k = 5;
+		
+		System.out.println(findLastDigit(n, k));
+	}
+
+}

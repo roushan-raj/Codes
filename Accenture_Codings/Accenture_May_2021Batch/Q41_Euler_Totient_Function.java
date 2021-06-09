@@ -1,0 +1,28 @@
+
+public class Q41_Euler_Totient_Function {
+	
+	public static int find(int n) {
+		int ans = 1;
+		for(int i=2; i<n; i++) {
+			if(gcd(i, n) == 1) {
+				ans++;
+			}
+		}
+		return ans;
+	}
+	
+	public static int gcd(int x, int y) {
+		if(x == 0) {
+			return y;
+		}
+		
+		return gcd(y % x, x);
+	}
+
+	public static void main(String[] args) {
+		
+		int n = 9;
+		System.out.println(find(n));
+		
+	}
+}

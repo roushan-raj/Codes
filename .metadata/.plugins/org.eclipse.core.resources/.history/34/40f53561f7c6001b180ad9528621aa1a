@@ -1,0 +1,32 @@
+
+public class Q35_Nth_Char_In_DecryptedString {
+	
+	public static char findChar(String str, int n) {
+		
+		String s = "";
+		
+		for(int i=1; i<str.length(); i=i+2) {
+			
+			char rep = str.charAt(i);
+			int repVal =Integer.parseInt(String.valueOf(rep));
+			char ch = str.charAt(i-1);
+			
+			while(repVal > 0) {
+				s = s + ch;
+				repVal--;
+			}
+		}
+	
+		char ans = s.charAt(n-1);
+		return ans;
+	}
+
+	public static void main(String[] args) {
+		String str = "a1b1c3";
+		
+		int n = 8;
+		
+		System.out.println(findChar(str, n));
+	}
+
+}

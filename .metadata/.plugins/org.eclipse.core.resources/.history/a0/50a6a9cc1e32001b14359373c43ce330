@@ -1,0 +1,50 @@
+import java.util.Arrays;
+
+public class Q1_Method2_Day2 {
+	
+	public void setZero(int [][] mat) {
+		int n = mat.length; int m = mat[0].length;
+		int dummyCol [] = new int [mat[0].length];
+		int dummyRow [] = new int [mat.length];
+		Arrays.fill(dummyCol, 1);
+		Arrays.fill(dummyRow, 1);
+		
+		for (int i=0; i<n; i++) {
+			for (int j=0; j<m; j++) {
+				if(mat[i][j] == 0) {
+					dummyCol[j] = dummyRow[i] =0;
+				}
+			}
+		}
+		
+		for(int i=0; i<n; i++) {
+			for(int j=0; j<m; j++) {
+				while ( mat[i][j] != 1 && dummyCol[j] == 0 || dummyRow[i] == 0)
+					mat[i][j] = 0;
+			}
+		}
+	}
+	
+	public void display (int [][] mat) {
+
+		for(int i=0; i<mat.length; i++) {
+			for(int j=0; j<mat[0].length; j++) {
+				 System.out.print(mat[i][j] + " ");   
+				}
+			System.out.println();
+			}
+	}
+
+	public static void main(String[] args) {
+		 
+		Q1_Method2_Day2 ob = new Q1_Method2_Day2();
+		int [][] mat = new int [][] {{1,1,1,1},
+									            {1,0,1,1,},
+									            {1,1,0,1,},
+									            {0,0,0,1}};
+		ob.setZero(mat);		
+		ob.display(mat);
+
+	}
+
+}

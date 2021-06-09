@@ -1,0 +1,27 @@
+
+public class GCD_of_Array {
+	
+	public int gcd(int a, int b) {
+		if(b == 0)
+			return a;
+		return gcd(b, a%b);
+	}
+	
+	public int findGcd(int[]arr) {
+		int res = arr[0];
+		for(int i=1; i<arr.length; i++) {
+			res = gcd(res, arr[i]);
+			
+			if(res == 1)
+				return 1;
+		}
+		return res;
+	}
+
+	public static void main(String[] args) {
+		GCD_of_Array ob = new GCD_of_Array();
+		int [] arr = new int[] {2, 4, 8};
+		System.out.println("GCD is: "+ob.findGcd(arr));
+
+	}
+}

@@ -1,0 +1,45 @@
+
+public class Q28_Bitwise_Operations {
+	
+	public static void findBitsOpeartions(int n) {
+		
+		// counting set bits
+		int count = 0;
+		int x  = n;
+		while(x > 0) {
+			x = x & (x - 1);
+			count++;
+		}
+		
+		// position of MSB
+		int MSB = 0;
+		int z = n;
+		while(z != 0) {
+			z = z / 2;
+			MSB++;
+		}
+		
+		// position of LSB
+		int LSB = 0;
+		int y = n;
+		while((y & 1) == 0) {
+			y >>= 1;
+			LSB++;
+		}
+		
+		
+		StringBuilder sb = new StringBuilder();
+		sb.append(count);
+		sb.append('#');
+		sb.append(LSB);
+		sb.append('#');
+		sb.append(MSB);
+		
+		System.out.println(sb);
+	}
+
+	public static void main(String[] args) {
+		int n = 10;
+		findBitsOpeartions(n);
+	}
+}

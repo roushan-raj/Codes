@@ -1,0 +1,28 @@
+
+public class Q28_Bitwise_Operations {
+	
+	void findBitsOpeartions(int n) {
+		int count = 0;
+		int x  = n;
+		while(x > 0) {
+			x = x & (x & 1);
+			count++;
+		}
+		System.out.println(count);
+		
+		int setBitCount = 0;
+		int y = n;
+		while((y & 1) == 0) {
+			y >>= 1;
+			setBitCount++;
+		}
+		System.out.println(setBitCount);
+		
+	}
+
+	public static void main(String[] args) {
+		int n = 10;
+		
+		findBitsOpeartions(n);
+	}
+}

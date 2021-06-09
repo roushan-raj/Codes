@@ -1,0 +1,64 @@
+import java.util.*;
+public class Q32_LargestSubArrayWithEqualNoof_0_1 {
+	
+	public static int largestSubArray(int [] arr, int n) {
+		
+		Map<Integer, Integer> map = new HashMap<>();
+	      int len = 0, count = 0;
+	      for(int i = 0;i < arr.length;i++) {
+	    	  
+	    	count = (count + arr[i] == 1) ? 1 : -1;
+	        if(count == 0)
+	           len = Math.max(len, i+1); 
+	        
+	        if(map.containsKey(count)) {
+	           len = Math.max(len, i - map.get(count));
+	           
+	        } else 
+	          map.put(count, i);
+	      }
+	      return len;
+	}
+
+	public static void main(String[] args) {
+		int arr[] = {1, 1, 0, 1};
+		int n = arr.length;
+		
+		System.out.println(largestSubArray(arr, n));
+	}
+}
+
+
+//import java.util.*;
+//import java.lang.*;
+//import java.io.*;
+//public class Main
+//{
+//  public static void main (String[] args) throws java.lang.Exception
+//  {
+//    Scanner sc = new Scanner(System.in);
+//    int n = sc.nextInt();
+//    int[] arr = new int[n];
+//    for(int i=0;i<n;i++){
+//            arr[i]=sc.nextInt();
+//        }
+//        int ans = max_length(arr,n);
+//        System.out.println(ans);
+//        
+//  }
+//  
+//  public static int max_length(int[] arr,int n){
+//    Map<Integer, Integer> m = new HashMap<>();
+//      int mx = 0, cnt = 0;
+//      for(int i = 0;i < arr.length;i++) {
+//        cnt+=(arr[i] == 1)?1:-1;
+//        if(cnt == 0)
+//          mx = Math.max(mx, i+1);        
+//        if(m.containsKey(cnt)) {
+//          mx = Math.max(mx, i - m.get(cnt));
+//        } else 
+//          m.put(cnt, i);
+//      }
+//      return mx;
+//  }
+//}

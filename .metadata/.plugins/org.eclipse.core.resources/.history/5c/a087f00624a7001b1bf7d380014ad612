@@ -1,0 +1,47 @@
+
+import java.io.*;
+import java.util.*;
+
+class Example1 {
+
+	static boolean isSubSequence(String str1, String str2, int m, int n) {
+//		if (m == 0)
+//			return true;
+//		if (n == 0)
+//			return false;
+	
+		if (str1.charAt(m - 1) == str2.charAt(n - 1))
+			return isSubSequence(str1, str2, m - 1, n - 1);
+		
+		return isSubSequence(str1, str2, m, n - 1);
+	}
+
+	public static void main(String[] args) {
+		
+	    //String [] BCom = {"abcde", "crnas", "onarous"};
+		//String VCom = "coronavirus";	
+		
+		  Scanner sc = new Scanner(System.in);
+	      String VCom = sc.nextLine();
+	      int size = sc.nextInt();
+	      String [] BCom = new String[size];
+	      System.out.println(BCom.length);
+	      for(int i=0; i<BCom.length; i++){
+	          BCom[i] = sc.nextLine();
+	      }
+		  sc.close();
+		  
+		  int n = VCom.length();
+		  for(int j=0; j<BCom.length; j++) {
+				String curr = BCom[j];
+				int m = curr.length();
+				boolean res = isSubSequence(curr, VCom, m, n);
+				if (res)
+					System.out.println("POSITIVE");
+				else
+					System.out.println("NEGATIVE");
+		}
+	}
+}
+
+

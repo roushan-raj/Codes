@@ -1,0 +1,28 @@
+import java.util.*;
+public class Q21_Most_Freq_Vowel {
+	
+	static HashMap<Character, Integer> map = new HashMap<>();
+	
+	public static char returnFrequentVowel(String str) {
+		for(int i=0; i<str.length(); i++) {
+			if(str.charAt(i) == 'a' || str.charAt(i) == 'e' || 
+					str.charAt(i) == 'i' || str.charAt(i) == 'o' || 
+					str.charAt(i) == 'u') {
+				map.getOrDefault(str.charAt(i), map.get(str.charAt(i)+1));
+			}
+		}
+		
+		
+		Iterator<Map.Entry<Character, Integer>> it = map.entrySet().iterator();
+		while(it.hasNext()) {
+			
+		}
+	}
+
+	public static void main(String[] args) {
+		
+		String str = "abeaicaidao";
+		
+		returnFrequentVowel(str);
+	}
+}

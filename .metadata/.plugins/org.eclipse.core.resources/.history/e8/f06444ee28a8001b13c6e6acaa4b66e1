@@ -1,0 +1,43 @@
+import java.util.*;
+public class Example {
+	
+	 public static void check(String [] BCom, String VCom){
+        int n = VCom.length();
+
+        for(int i=0; i<BCom.length; i++){
+            String curr = BCom[i];
+            int m = curr.length();
+
+            boolean ans = isPresent(curr, VCom, m, n);
+
+            if(ans){
+                System.out.println("POSITIVE");
+            }
+            else{
+                System.out.println("NEGATIVE");
+            }
+        }   
+    }
+	    
+    public static boolean isPresent(String curr, String VCom, int m, int n){
+
+          if(curr.charAt(m-1) == VCom.charAt(n-1)){
+                return isPresent(curr, VCom, m-1, n-1);
+          }
+          return isPresent(curr, VCom, m, n-1);
+    }
+
+
+	public static void main(String[] args) {
+//		Scanner sc = new Scanner(System.in);
+//        String VCom = sc.nextLine();
+//        int n = sc.nextInt();
+//        String [] BCom = new String[n];
+//        for(int i=0; i<n; i++){
+//            BCom[i] = sc.nextLine();
+//        }
+        String VCom = "coronavirus";
+        String [] BCom = {"abcde", "crnas", "onarous"};
+        check(BCom, VCom);
+	}
+}

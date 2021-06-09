@@ -1,0 +1,65 @@
+import java.util.Stack;
+
+public class Q43_PostFix_Evaluator {
+
+    public static int evaluate(int a, int b, char operator){
+        switch (operator) {
+            case '+':
+                return a + b;
+            case '-':
+                return b - a;
+            case '*':
+                return a * b;
+            case '/':
+                if (a == 0)
+                    throw new
+                            UnsupportedOperationException("Cannot divide by zero");
+                return b / a;
+        }
+        return 0;
+    }
+    public static int convert(String expression) {
+    	
+    	String newExp = "";
+    	for(int i=0; i<expression.length(); i++) {
+    		newExp = newExp + " " + expression.charAt(i);
+    	}
+    	newExp = newExp.substring(1, newExp.length());
+    	System.out.println(newExp);
+
+        Stack<Integer> stack = new Stack<>();
+        for (int i = 0; i < newExp.length(); i++) {
+            char c = newExp.charAt(i);
+
+            if(c==' ')
+                continue;
+
+            if (c == '*' || c == '/' || c == '^' || c == '+' || c == '-') {
+                int s1 = stack.pop();
+                int s2 = stack.pop();
+                int temp = evaluate(s1, s2, c);
+                stack.push(temp);
+            } 
+            else {
+                
+                int num = 0;
+
+                while(Character.isDigit(c)) {
+                    num = num*10 + (c-'0');
+                    i++;
+                    c = newExp.charAt(i);
+                }
+                i--;
+              
+                stack.push(num);
+            }
+        }
+        int result = stack.pop();
+        return result;
+    }
+
+    public static void main(String[] args) {
+        String exp = "879-2*+";
+        System.out.println(convert(exp));
+    }
+}

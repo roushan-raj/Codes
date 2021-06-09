@@ -1,0 +1,24 @@
+
+public class Q8_Bits_Slot_2_23Dec2020 {
+	
+	public static int findTwoSetbitsSum(int n, int setBits) {
+		int ans = 0;
+		for(int i=0; i<Math.pow(2, n); i++) {
+			int count = 0;
+			int x=i;
+			
+			while(x>i) {
+				if((x&1) == 1) count++;
+				x = x>>1;
+			}
+			if(count == setBits) {
+				ans = ans + i;
+			}
+		}
+		return ans;
+	}
+
+	public static void main(String[] args) {
+		System.out.println(findTwoSetbitsSum(3, 2));
+	}
+}

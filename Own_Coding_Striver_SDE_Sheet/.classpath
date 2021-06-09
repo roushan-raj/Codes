@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="Day_1_Arrays"/>
+	<classpathentry kind="src" path="Day_2_Arrays"/>
+	<classpathentry kind="src" path="Day_3_Arrays_Maths"/>
+	<classpathentry kind="src" path="Day_4_Hashing"/>
+	<classpathentry kind="src" path="Day_5_LinkedList"/>
+	<classpathentry kind="src" path="Day_6_LinkedList"/>
+	<classpathentry kind="src" path="Day_7_2Pointer"/>
+	<classpathentry kind="src" path="Day_8_Greedy"/>
+	<classpathentry kind="src" path="Day_11_Divide_and_Conquer"/>
+	<classpathentry kind="src" path="Day_12_BitsManipulation"/>
+	<classpathentry kind="src" path="Day_13_Stack_&amp;_Queue"/>
+	<classpathentry kind="src" path="Day_14_Stack_&amp;_Queue"/>
+	<classpathentry kind="src" path="Day_15_String"/>
+	<classpathentry kind="src" path="Day_16_String"/>
+	<classpathentry kind="src" path="Day_10_BackTracking"/>
+	<classpathentry kind="src" path="Day_9_Recursion"/>
+	<classpathentry kind="src" path="Day_17_Binary_Tree"/>
+	<classpathentry kind="src" path="Day_18_Binary_Tree"/>
+	<classpathentry kind="src" path="Day_19_Binary_Tree"/>
+	<classpathentry kind="src" path="Day_20_Binary_Search_Tree"/>
+	<classpathentry kind="src" path="Day_21_Binary_Search_Tree"/>
+	<classpathentry kind="src" path="Day_22_Mixed_Questions"/>
+	<classpathentry kind="src" path="Day_23_Graph"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

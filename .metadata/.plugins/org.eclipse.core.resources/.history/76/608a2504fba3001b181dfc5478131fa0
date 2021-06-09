@@ -1,0 +1,12 @@
+
+public class Example {
+
+	public static void main(String[] args) {
+		int a = 20, b = 9, c = 88, d = 30;
+		int e;
+		e = c % a;
+		a = a+b+e;
+		d = c%a;
+		System.out.println(d);
+	}
+}

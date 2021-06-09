@@ -1,0 +1,44 @@
+
+public class Q3_All_Permutations_of_String_Char {
+	
+	public static String swap(String str, int x, int y) {
+		
+		char [] arr = str.toCharArray();
+		char ch;
+		
+		ch = arr[x];
+		arr[x] = arr[y];
+		arr[y] = ch;
+		
+		return String.valueOf(arr);
+	}
+	
+	public static int countPermutations(String str) {
+		return helper(str, 0, str.length());
+	}
+	
+	public static int helper(String str, int start, int end) {
+
+		int count = 0;
+		
+		if(start == end-1) {
+			System.out.println(str);
+		}
+		else {
+			for(int i=start; i<end; i++) {
+				str = swap(str, start, i);
+				
+				helper(str, start+1, end);
+				
+				str = swap(str, start, i);
+			}
+		}
+		return count;
+	}
+
+	public static void main(String[] args) {
+		
+		String str = "ABC";
+		System.out.println(countPermutations(str));
+	}
+}

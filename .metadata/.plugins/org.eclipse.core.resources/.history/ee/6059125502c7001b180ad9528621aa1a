@@ -1,0 +1,16 @@
+
+public class Q52_Count_Palindromes_In_String {
+	
+	public static void countPalindrome(String str) {
+		String words [] = str.split(" ");
+		
+		System.out.println(words[0]);
+		
+	}
+
+	public static void main(String[] args) {
+		String str = "this is level 71";
+		//System.out.println(countPalindrome(str));
+		countPalindrome(str);
+	}
+}

@@ -1,0 +1,40 @@
+
+public class Q2_Check_Given_Strings_Weak_or_Strong {
+	
+	public static String reverse(String str) {
+		int i = 0;
+		int j = str.length()-1;
+		
+		while(i<=j) {
+			char temp = str.charAt(i);
+			str.replace(str.charAt(i), str.charAt(j));
+			str.replace(str.charAt(j), temp);
+		}
+		return str;
+	}
+	
+	public static void checkString(String str) {
+		for(int i=0; i<str.length(); i++) {
+			if((str.charAt(i) < 65 && str.length() > 90) || 
+					(str.charAt(i) < 97 && str.length() > 122)) {
+				System.out.println("you inputted a weak string");
+				return;
+			}
+		}
+		
+		String rev_srt = reverse(str);
+		
+		if(str.compareTo(rev_srt) == 1) {
+			System.out.println("you inputted a strong string");
+		}
+		else {
+			System.out.println("you inputted a weak string");
+		}
+	}
+
+	public static void main(String[] args) {
+		
+		String str = "wowu";
+		checkString(str);
+	}
+}

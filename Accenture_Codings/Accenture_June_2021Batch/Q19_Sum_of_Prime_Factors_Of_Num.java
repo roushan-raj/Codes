@@ -1,0 +1,37 @@
+import java.util.*;
+public class Q19_Sum_of_Prime_Factors_Of_Num {
+	
+	static HashSet<Integer> set = new HashSet<>();
+	
+	public static int primeFactors(int n) {
+		if(n == 0 || n < 0) {
+			return 0;
+		}
+		while(n%2 == 0) {
+			set.add(2);
+			n = n/2;
+		}
+		for(int i=3; i<=Math.sqrt(n); i+=2) {
+			while(n%i == 0) {
+				set.add(i);
+				n = n/i;
+			}
+		}
+		if(n > 2) {
+			set.add(n);
+		}
+		
+		int sum = 0;
+		Iterator<Integer> it = set.iterator();
+		while(it.hasNext()) {
+			sum = sum + it.next();
+		}
+		return sum;
+	}
+
+	public static void main(String [] args) {
+		
+		System.out.println(primeFactors(315));
+	}
+}
+

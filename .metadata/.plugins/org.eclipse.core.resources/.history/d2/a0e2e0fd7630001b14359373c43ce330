@@ -1,0 +1,56 @@
+
+public class Q1_Day2_Method1 {
+	
+	public void setZeros(int [][] mat) {
+		int n = mat.length; int m = mat[0].length;
+		
+		for(int i=0; i<n; i++) {
+			for(int j=0; j<m; j++) {
+				if(mat[i][j] == 0) {
+					for (int k =0; k<m; k++) {
+						if (mat[i][k] != 0) {
+							mat[i][k] = -1;
+						}
+					}
+					for (int k =0; k<n; k++) {
+						if (mat[k][j] != 0) 
+							mat[k][j] = -1;
+						
+					}
+				}
+			}
+		}
+		
+		for(int i=0; i<n; i++) {
+			for(int j=0; j<m; j++) {
+				if(mat[i][j] == -1) 
+					mat[i][j] = 0;
+				
+			}
+		}
+	}
+	
+	public void display (int [][] mat) {
+
+		for(int i=0; i<mat.length; i++) {
+			for(int j=0; j<mat[0].length; i++) {
+				 System.out.print(mat[i][j] + " ");   
+				}
+			System.out.println();
+			}
+	}
+
+	public static void main(String[] args) {
+		 
+		Q1_Day2_Method1 ob = new Q1_Day2_Method1();
+		int [][] mat = new int [][] {{1,1,1,1},
+			                                     {1,0,1,1,},
+			                                     {1,1,0,0,},
+			                                     {0,0,0,1}}; 
+		ob.setZeros(mat);	  
+		ob.display(mat);
+	    
+
+	}
+
+}
